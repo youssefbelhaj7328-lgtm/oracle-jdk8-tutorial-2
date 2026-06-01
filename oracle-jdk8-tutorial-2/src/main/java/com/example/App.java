@@ -487,19 +487,31 @@ public class App {
 				System.out.println("La epresion es verdadera");
 				} else {
 				System.out.println("La expresion es false");
-				}
+				
+				}	
+				
+				/* Ejercicio # 1 del Lunes 1 de Junio: 
+				* 
+				* Respecto al array de manzanas, recorrerlo con una sentencia for mejorada
+				* y mostrar por la consola las manzanas que incluyan en el nombre de la 
+				* variedad la palabra Delicious y, ademas, sean de color Rojo, o que tengan 
+				* un precio inferior o igual al precio promedio */ 
+					
+				
 				}
 				
 				}
+				
 			
 				
-			}
+			
 			
 			
 			
 			
 		
-		}
+		
+	
 
 
 
