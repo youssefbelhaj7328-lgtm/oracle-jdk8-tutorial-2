@@ -449,7 +449,7 @@ public class App {
 			System.out.println("La epresion es verdadera");
 		} else {
 			System.out.println("La exprsion es false");
-
+		}
 			/*
 			 * OPERADOR DE NEGACION NOT (!)
 			 * 
@@ -461,7 +461,7 @@ public class App {
 				System.out.println("La epresion es verdadera");
 			} else {
 				System.out.println("La exprsion es false");
-
+			}
 				/* En la misma expresion se pueden tener operadores OR (||) y AND (&&) */
 
 				if (t1 || t2 || !t3) {
@@ -525,115 +525,64 @@ public class App {
 
 				// Invocar el metodo infoDiaSemana, al cual le hemos quitado
 				// el modificador static
-				App app;
-				app = new App();
-
-				System.out.println(new App().infoDiaSemana(DiaSemana.VIERNES));
-				// metodo de istancias, es decir, sin modificador saratic,
-				// Metodo de instancia, es decir, sin el modificador static,
-
-				// que recibe un tipo enum y devuelve un String
-
-				// Se necesita una instancia (objeto) de la clase App
-
-				// para poder invocar el metodo infoDiaSemana, porque es un metodo de instancia
-
+				
+				
+				infoDiaSemana(DiaSemana.VIERNES);
 			}
-		}
+	// metodo de istancias, es decir, sin modificador saratic,
+	// Metodo de instancia, es decir, sin el modificador static,
 
-	}
+	// que recibe un tipo enum y devuelve un String
 
-	String infoDiaSemana(DiaSemana diaSemana) {
-		
-		
-		// Utilizando sentencia switch - case 
+	// Se necesita una instancia (objeto) de la clase App
+
+	// para poder invocar el metodo infoDiaSemana, porque es un metodo de instancia
+
+	static void infoDiaSemana(DiaSemana diaSemana) {
+
+		// Utilizando sentencia switch - case
 
 		// para evaluar el valor del parametro diaSemana y devolver un mensaje
 		switch (diaSemana) {
-		
-		
-
-		 
 
 		case LUNES:
 
-		return "Primer dia de la semana, a trabajar";
-
-		 
+			System.out.println("Primer dia de la semana, a trabajar");
 
 		case MARTES:
 
-		return "Hemos pasado el lunes";
+			System.out.println("Hemos pasado el lunes");
 
-		 
+			break;
 
 		case MIERCOLES:
 
-		return "Nos acercamos al fin de semana";
-
-		 
+			System.out.println("Nos acercamos al fin de semana");
+			break;
 
 		case JUEVES:
 
-		return "Es juernes, los nuevos viernes, a disfrutar!!!";
-
-		 
+			System.out.println("Es juernes, los nuevos viernes, a disfrutar!!!");
+			break;
 
 		case VIERNES:
 
-		return "Es viernes y el cuerpo lo sabe";
-
-		 
+			System.out.println("Es viernes y el cuerpo lo sabe");
+			break;
 
 		case SABADO:
 
 		case DOMINGO:
 
-		return "Es fin de semana";
-
-		 
+			System.out.println("Es fin de semana");
+			break;
 
 		default:
 
-		return "El dia recibido no existe";
+			System.out.println("El dia recibido no existe");
 
-		
+			System.out.println("El dia de la semana no es valido");
 
-
-
-
-
-		
-		
-		
-
-
-
-
-
-		
-		
-		
-		
-		
-		
-		
-		if (diaSemana.equals(DiaSemana.LUNES))
-			return "Primer dia de la semana, a trabajar";
-		else if (diaSemana.equals(DiaSemana.MARTES))
-			return "Hemos pasado el lunes";
-		else if (diaSemana.equals(DiaSemana.MIERCOLES))
-			return "Nos acercamos al fin de semana";
-		else if (diaSemana.equals(DiaSemana.JUEVES))
-			return "Es juernes, los nuevos viernes, a disfrutar!!!";
-		else if (diaSemana.equals(DiaSemana.VIERNES))
-			return "El viernes y el cuerpo lo sabe";
-		else if (diaSemana.equals(DiaSemana.SABADO) || diaSemana.equals(DiaSemana.DOMINGO))
-			return "Es fin de semana";
-		else
-			return "El dia recibido no existe";
-
-		
-
+		}
 	}
 }
