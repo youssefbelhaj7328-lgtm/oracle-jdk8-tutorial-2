@@ -527,10 +527,9 @@ public class App {
 				// el modificador static
 				App app;
 				app = new App();
-				
 
 				System.out.println(new App().infoDiaSemana(DiaSemana.VIERNES));
-					// metodo de istancias, es decir, sin modificador saratic,
+				// metodo de istancias, es decir, sin modificador saratic,
 				// Metodo de instancia, es decir, sin el modificador static,
 
 				// que recibe un tipo enum y devuelve un String
@@ -539,22 +538,85 @@ public class App {
 
 				// para poder invocar el metodo infoDiaSemana, porque es un metodo de instancia
 
-
-
-
-
-				
-				
-				
-				
-				
-
 			}
 		}
 
 	}
 
 	String infoDiaSemana(DiaSemana diaSemana) {
+		
+		
+		// Utilizando sentencia switch - case 
+
+		// para evaluar el valor del parametro diaSemana y devolver un mensaje
+		switch (diaSemana) {
+		
+		
+
+		 
+
+		case LUNES:
+
+		return "Primer dia de la semana, a trabajar";
+
+		 
+
+		case MARTES:
+
+		return "Hemos pasado el lunes";
+
+		 
+
+		case MIERCOLES:
+
+		return "Nos acercamos al fin de semana";
+
+		 
+
+		case JUEVES:
+
+		return "Es juernes, los nuevos viernes, a disfrutar!!!";
+
+		 
+
+		case VIERNES:
+
+		return "Es viernes y el cuerpo lo sabe";
+
+		 
+
+		case SABADO:
+
+		case DOMINGO:
+
+		return "Es fin de semana";
+
+		 
+
+		default:
+
+		return "El dia recibido no existe";
+
+		
+
+
+
+
+
+		
+		
+		
+
+
+
+
+
+		
+		
+		
+		
+		
+		
 		
 		if (diaSemana.equals(DiaSemana.LUNES))
 			return "Primer dia de la semana, a trabajar";
