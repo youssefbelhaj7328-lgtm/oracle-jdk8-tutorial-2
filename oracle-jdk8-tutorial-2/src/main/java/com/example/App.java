@@ -450,85 +450,175 @@ public class App {
 		} else {
 			System.out.println("La exprsion es false");
 		}
-			/*
-			 * OPERADOR DE NEGACION NOT (!)
-			 * 
-			 * A modo de ejemplo: ¿Que sucederia si se niega la variable t3, en la condicion
-			 * de la sentencia if anterior?
-			 */
+		/*
+		 * OPERADOR DE NEGACION NOT (!)
+		 * 
+		 * A modo de ejemplo: ¿Que sucederia si se niega la variable t3, en la condicion
+		 * de la sentencia if anterior?
+		 */
 
-			if (t1 || t2 || t3) {
-				System.out.println("La epresion es verdadera");
-			} else {
-				System.out.println("La exprsion es false");
+		if (t1 || t2 || t3) {
+			System.out.println("La epresion es verdadera");
+		} else {
+			System.out.println("La exprsion es false");
+		}
+		/* En la misma expresion se pueden tener operadores OR (||) y AND (&&) */
+
+		if (t1 || t2 || !t3) {
+			System.out.println("La epresion es verdadera");
+		} else {
+			System.out.println("La expresion es false");
+
+		}
+
+		/*
+		 * Ejercicio # 1 del Lunes 1 de Junio:
+		 * 
+		 * Respecto al array de manzanas, recorrerlo con una sentencia for mejorada y
+		 * mostrar por la consola las manzanas que incluyan en el nombre de la variedad
+		 * la palabra Delicious y, ademas, sean de color Rojo, o que tengan un precio
+		 * inferior o igual al precio promedio
+		 */
+
+		System.out.println("----- Ejercicio 1 del lunes 1 de Junio -----");
+
+		int counter2 = 0;
+		double acumuPrecio = 0.0;
+
+		for (Manzana man2 : manzanas) {
+			counter2++;
+			acumuPrecio += man2.getPrecio().doubleValue();
+		}
+		double precioPromedio = acumuPrecio / counter2;
+		System.out.println("El precio promedio de las manzanas es: " + precioPromedio);
+
+		for (Manzana manza : manzanas) {
+			if (manza.getVariedad().contains("Delicious") && manza.getColor().equals("Roja")
+					|| manza.getPrecio().doubleValue() <= precioPromedio) {
+				System.out.println("La manzana que cumple la condicion es: " + manza);
+
 			}
-				/* En la misma expresion se pueden tener operadores OR (||) y AND (&&) */
+		}
+		/*
+		 * SENTENCIA SWITCH CASE.
+		 * 
+		 * Es una variante de la sentencia if - else, preferible cuando con una sentenci
+		 * if - else hay que evaluar mas de 3 o 4 condiciones porque el codigo se hace
+		 * dificil de mantener y poco legible
+		 */
+		/*
+		 * Para ejemplicar, vamos a crear un enumerable con los dias de la semana y
+		 * mostrar un mensaje en dependencia del dia de la semana que se trate.
+		 * 
+		 * Se propone crear un metodo a nivel de la clase App que recibe un tipo enum y
+		 * devuelva un tipo String con el mensaje segun el dia de la semana en cuestion
+		 */
+		/*
+		 * Solucion:
+		 * 
+		 * Primero: con una sentencia if - else en el cuerpo del metodo
+		 * 
+		 * Segundo: con una sentencia switch - case en el cuerpo del metodo
+		 */
+		// Invocacion o llamada del metodo infoDiaSemana con parametro correspondiente
+		// al viernes
 
-				if (t1 || t2 || !t3) {
-					System.out.println("La epresion es verdadera");
-				} else {
-					System.out.println("La expresion es false");
+		// Invocar el metodo infoDiaSemana, al cual le hemos quitado
+		// el modificador static
 
-				}
+		infoDiaSemana(DiaSemana.VIERNES);
+		/*
+		 * OPERADOR TERNARIO
+		 * 
+		 * 
+		 * 
+		 * Trabaja con tres operandos, por lo cual se le llama ternario, que quiere
+		 * decir
+		 * 
+		 * tres partes. Y en muchas ocasiones es la una alternativa posible cuando
+		 * 
+		 * hay que evaluar uno o varias condiciones y devolver un resultado
+		 * 
+		 * 
+		 * 
+		 * En su forma simple de su sintaxis es sencillo, pero cuando se anida entonces
+		 * 
+		 * es un poco mas complejo /* Sintaxis del Operador Ternario con un ejemplo
+		 * sencillo
+		 */
+		int j = 4;
+		int k = 5;
+		String result = null;
+		/*
+		 * El operador ternario evalua una expresion que tiene que dar como resultado
+		 * 
+		 * un valor logico, verdadero o falso.
+		 * 
+		 * Si la evaluacion de la expresion es verdadera se retorna lo que esta
+		 * 
+		 * a continuacion del signo de interrogacion invertido, de lo contrario
+		 * 
+		 * se retorna lo que esta a continuacion de los dos puntos
+		 */
 
-				/*
-				 * Ejercicio # 1 del Lunes 1 de Junio:
-				 * 
-				 * Respecto al array de manzanas, recorrerlo con una sentencia for mejorada y
-				 * mostrar por la consola las manzanas que incluyan en el nombre de la variedad
-				 * la palabra Delicious y, ademas, sean de color Rojo, o que tengan un precio
-				 * inferior o igual al precio promedio
-				 */
+		result = k > j ?
 
-				System.out.println("----- Ejercicio 1 del lunes 1 de Junio -----");
+				"Si, k es mayor que j" :
 
-				int counter2 = 0;
-				double acumuPrecio = 0.0;
+				"No, k no es mayor que j";
 
-				for (Manzana man2 : manzanas) {
-					counter2++;
-					acumuPrecio += man2.getPrecio().doubleValue();
-				}
-				double precioPromedio = acumuPrecio / counter2;
-				System.out.println("El precio promedio de las manzanas es: " + precioPromedio);
+		System.out.println("Resultado del operador ternario para los valores de: "
 
-				for (Manzana manza : manzanas) {
-					if (manza.getVariedad().contains("Delicious") && manza.getColor().equals("Roja")
-							|| manza.getPrecio().doubleValue() <= precioPromedio) {
-						System.out.println("La manzana que cumple la condicion es: " + manza);
+				+ "k = " + k + ", y j = " + j + ", es: " + result);
 
-					}
-				}
-				/*
-				 * SENTENCIA SWITCH CASE.
-				 * 
-				 * Es una variante de la sentencia if - else, preferible cuando con una sentenci
-				 * if - else hay que evaluar mas de 3 o 4 condiciones porque el codigo se hace
-				 * dificil de mantener y poco legible
-				 */
-				/*
-				 * Para ejemplicar, vamos a crear un enumerable con los dias de la semana y
-				 * mostrar un mensaje en dependencia del dia de la semana que se trate.
-				 * 
-				 * Se propone crear un metodo a nivel de la clase App que recibe un tipo enum y
-				 * devuelva un tipo String con el mensaje segun el dia de la semana en cuestion
-				 */
-				/*
-				 * Solucion:
-				 * 
-				 * Primero: con una sentencia if - else en el cuerpo del metodo
-				 * 
-				 * Segundo: con una sentencia switch - case en el cuerpo del metodo
-				 */
-				// Invocacion o llamada del metodo infoDiaSemana con parametro correspondiente
-				// al viernes
+		/*
+		 * Cuando la expresion logica que hay que evaluar es un poco compleja, se
+		 * 
+		 * permite utilizar parentesis, para dar claridad a la solucion, pero no
+		 * 
+		 * es que sea necesario.
+		 */
+		/*
+		 * Ejercicio el erray de manzanas y para las manazanas cuya tamaño (ize)este
+		 * ente 5 y 7 /* Ejercicio # 1 del Martes 2 de Junio
+		 * 
+		 * 
+		 * 
+		 * Recorrer el array de manzanas y para las manzanas cuyo tamaño (size) este
+		 * entre
+		 * 
+		 * 5 y 7 incrementar su precio en un 10% y las que no disminuir su precio en un
+		 * 3%,
+		 * 
+		 * agregar a un nuevo array las manzanas cuyo precio ha sido incrementado en un
+		 * 10%
+		 * 
+		 * 
+		 * // Nuevo array de manzanas que contendra las manzanas cuyo precio se ha
+		 * incrementado // en un 10% Manzana[] manzanas10PorCientoPrecioMayor = new
+		 * Manzana[20];
+		 * 
+		 * int indice = 0;
+		 * 
+		 * for (Manzana manzana : manzanas) { // Utilizando un operador ternario double
+		 * actualSize = manzana.getSize(); double precioActual =
+		 * manzana.getPrecio().doubleValue();
+		 * 
+		 * BigDecimal nuevoPrecio = (actualSize >= 5 && actualSize <= 7) // incrementar
+		 * el precio en un 10% ? new BigDecimal(precioActual * 1.1) // Disminuir el
+		 * precio en un 3% : new BigDecimal(precioActual * 0.97);
+		 * 
+		 * // La manzana tiene que ser agregada el nuevo array, si su precio es //
+		 * inferior al nuevoPrecio
+		 * 
+		 * if (precioActual < nuevoPrecio.doubleValue()) {
+		 * 
+		 * // Actualizo la manzana con su nuevo precio manzana.setPrecio(nuevoPrecio);
+		 * manzanas10PorCientoPrecioMayor[indice++] = manzana; }
+		 */
 
-				// Invocar el metodo infoDiaSemana, al cual le hemos quitado
-				// el modificador static
-				
-				
-				infoDiaSemana(DiaSemana.VIERNES);
-			}
+	}
+
 	// metodo de istancias, es decir, sin modificador saratic,
 	// Metodo de instancia, es decir, sin el modificador static,
 
