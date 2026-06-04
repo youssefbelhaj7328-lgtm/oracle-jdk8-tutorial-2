@@ -17,8 +17,11 @@ public class App {
 		 */
 
 		// Ejemplo sencillo para comprender la sintaxis de la sentencia while
+		
 
-		int z = 10;
+		int z = -1;
+		
+		
 		int counterr = 0;
 
 		while (z >= 0) {
@@ -29,6 +32,7 @@ public class App {
 		System.out
 				.println("El bloque correspondiente a la sentencia while" + ", se ha ejecutado " + counterr + " veces");
 		System.out.println("El valor final de la variable z es: " + z);
+		
 
 	}
 
