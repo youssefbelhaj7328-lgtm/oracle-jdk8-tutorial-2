@@ -4,54 +4,108 @@ public class App {
 	public static void main(String[] args) {
 
 		/*
-		 * Sentencia while:
-		 * 
-		 * 
-		 * Las sentencias for clasica y for mejorada se utilizan cuando se sabe, a
-		 * priori, la cantidad de veces que se va a ejecutar un bloque de instrucciones.
-		 * 
-		 * Mientras que la sentencia while se utiliza cuando no se sabe, a priori, la
-		 * cantidad de veces que se va a ejecutar un bloque de instrucciones y ademas,
-		 * cuando no se requiere ejecutar el bloque de instrucciones ni una sola vez
-		 * aunque ya no se cumpla la condicion
+		 * Trabajo con arrays de dos dimensiones, tambien llamado matriz cuando el array
+		 * es de una sola dimension se le de denimina victor.
 		 */
 
-		// Ejemplo sencillo para comprender la sintaxis de la sentencia while
-		
+		/* ¿Como declarara un array de dos dimensiones (matriz)? */
+		/*
+		 * Amodo de ejemplo , vamos a creasr un array bidimensional de 3 filas y 3
+		 * columnas con numeros enteros. posteriormente recorremos dicha matriz para
+		 * buscar ocurrencia de un numero y cuando se encuentre impriir en la consola la
+		 * fila y la colomna donde ha sido encontrado dicho numero
+		 */
 
-		int z = -1;
-		
-		
-		int counterr = 0;
+		/*
+		 * No tiene que ver con los array de dos dimensiones , pero vale para recordar:
+		 * Que cuando se declara un array y en mismo momento se le asigna valores, se
+		 * obtiene un array de tamaño fijo
+		 */
+		String[] nombres = { "Elida", "Gina" };
 
-		while (z >= 0) {
-			System.out.println("El valor de la variable z: " + z);
-			
-			z--;
-			counterr++;
-		}
-		System.out
-				.println("El bloque correspondiente a la sentencia while" + ", se ha ejecutado " + counterr + " veces");
-		System.out.println("El valor final de la variable z es: " + z);
-			/*sentencia do - while.
-	 
+		// nombres[2] = "Miguel";
+		int[][] matrizEnteros = {
 
-* La condicion se evalua al final, no al principio como
-* en la sentencia while, por lo que si se necesita ejecutar
-* el bloque de instrucciones que estan entre las llaves de
-* apertura y cierre, una vez al menos, pues esta es la sentencia
-* indicada */
-			int zz = 20;
-			
+				{ 1, 2, 3, 10, 100, 200 }, { 4, 5, 6, 20 }, { 7, 8, 9 }, { 4, 5, 6, 20, 400 }, { 7, 8, 9, 30 }
 
-			do {
-			System.out.println("No se cumple ya la condicion y "
-			+ "hemos entrado al bucle una vez, de todas formas ");
-			zz -= 5;
-			} while (zz < 10);
-			
-				
-		
+		};
+
+		/*
+		 * Ejemplo: Recorrer la matriz anterior para buscar la primera ocurrencia del
+		 * numero 5 y mostrar la fila y la columna en las cuales ha sido encontrado.
+		 * 
+		 * Para recorrer una matriz se utilizan sentecias for anidadas, una para las
+		 * filas y otra para las columnas
+		 */
+		// for (int fila = 0; fila <= 3 - 1; fila++ )
+		// for (int columna = 0; columna <= 3 - 1; columna++ ) {
+		//
+		// }
+
+		/*
+		 * El codigo anterior no es correcto y se ha comentado porque solamente serviria
+		 * para tratar una matriz cuadrada de 3 x 3, es decir 3 filas y 3 columnas.
+		 * 
+		 * Si ampliamos o disminuimos el numero de filas o de columnas ya el codigo no
+		 * vale para nada
+		 */
+		int totalFilas = matrizEnteros.length;
+
+		System.out.println("Total de filas: " + totalFilas);
+		// el numero a buscar, su primer ocurencia en la matiz es el numero 5
+		int numeroABuscar = 5;
+
+		for (int fila = 0; fila <= totalFilas - 1; fila++)
+			for (int columna = 0; columna <= matrizEnteros[fila].length - 1; columna++) {
+
+				/*
+				 * El codigo siguiente ha sido sugerido por GitHub Copilot, un agente de IA,
+				 * pero soluciona el encontrar la primera ocurrencia del numero a buscar, porque
+				 * aunque ya haya encontrado el numero lo continua buscando, pero si el numero
+				 * se encontrase repetido en la misma fila tampoco lo encontraria por segunda
+				 * vez.
+				 * 
+				 * En resumen, es bastante deficiente el codigo sugerido inicialmente
+				 * 
+				 * Solamente servira para encontrar la primera ocurrencia en cada fila
+				 */
+				if (matrizEnteros[fila][columna] == numeroABuscar) {
+					System.out.println("Numero encontrado en la fila: " + fila);
+					System.out.println("Numero encontrado en la columna: " + columna);
+					break;
+				}
+			}
+		/*
+		 * Acontinuación el codigo que reañmente soluciona el plantamiento original es
+		 * decir de buscar la PRIMERA ocurrencia del valor buscado el numero 5 en este
+		 * caso
+		 */
+		System.out.println("Codigo que soliciona el problema origenal;");
+
+		bucleExterior: for (int fila = 0; fila <= totalFilas - 1; fila++)
+			for (int columna = 0; columna <= matrizEnteros[fila].length - 1; columna++) {
+
+				if (matrizEnteros[fila][columna] == numeroABuscar) {
+					System.out.println("Numero encontrado en la fila: " + fila);
+					System.out.println("Numero encontrado en la columna: " + columna);
+					break bucleExterior;
+
+				}
+			}
+		/*
+		 * Ejercicio 1 del viernes 5 de junio. Recorrer la matriz y encontrar todas la
+		 * correncias del numerio 5 es decir tener en cuenta que puede estar en la misma
+		 * fila en mas de un columna
+		 */
+		/* Solucion */
+		System.out.println("-----Solucion al ejercicio # 1 del viernes 5 de Junio-----");
+
+		for (int fila = 0; fila <= totalFilas - 1; fila++)
+			for (int columna = 0; columna <= matrizEnteros[fila].length - 1; columna++) {
+
+				if (matrizEnteros[fila][columna] == numeroABuscar)
+					System.out.println("Numero encontrado en fila: " + fila + " y columna: " + columna);
+			}
 
 	}
 
