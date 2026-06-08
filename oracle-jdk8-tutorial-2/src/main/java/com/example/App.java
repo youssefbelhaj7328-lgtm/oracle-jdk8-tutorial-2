@@ -106,7 +106,79 @@ public class App {
 				if (matrizEnteros[fila][columna] == numeroABuscar)
 					System.out.println("Numero encontrado en fila: " + fila + " y columna: " + columna);
 			}
+		/*
+		 * Sentencia continue
+		 * 
+		 * A diferencia del break, no rompe el bucle sino que continua en la siguiente
+		 * iteracion
+		 * 
+		 * Tambien admite etiquetas,
+		 * 
+		 * A modo de ejemplo, recorrer la matriz de numeros enteros, pero utilizando
+		 * sentencias for mejoradas y cada vez que se encuentre un valor par, continuar
+		 * en la siguiente iteracion,
+		 * 
+		 * Si el valor encontrado no es par, elvar al cuadrado el numero y almacenarlo
+		 * en la mismo ubicacion
+		 * 
+		 * Mostrar el array resultante al final
+		 */
+		/*
+		 * Primero: recorrer la matriz con dos sentencias for mejoradas
+		 */
+		/*
+		 * Sentencia continue
+		 * 
+		 * A diferencia del break, no rompe el bucle sino que continua en la siguiente
+		 * iteracion
+		 * 
+		 * Tambien admite etiquetas,
+		 * 
+		 * A modo de ejemplo, recorrer la matriz de numeros enteros, pero utilizando
+		 * sentencias for mejoradas y cada vez que se encuentre un valor par, continuar
+		 * en la siguiente iteracion,
+		 * 
+		 * Si el valor encontrado no es par, elevar al cuadrado el numero y almacenarlo
+		 * en una nueva matriz de numeros enteros, es decir, una matriz de numeros
+		 * enteros al cuadrado.
+		 * 
+		 * 
+		 * Mostrar el array resultante al final
+		 */
+		System.out.println("-----Ejercicio con sentencia continue-----");
+		/*
+		 * Array bidimensional donde se va aalmacenar elcuadrado de los menores impares
+		 * 
+		 */
+		int[][] matriz = new int[10][100];
 
+		int i = -1; // indice para las filas
+		int j = 0; // indice para las columnas
+		// recorrer matriz con for mejorado la matriz de numeros enteros
+		for (int[] fila : matrizEnteros) {
+
+			// si el valor es par, continuar
+			for (int numero : fila) {
+				if (numero % 2 == 0)
+					continue;
+				// si el valor no es par, elevar al cuadrado
+				else {
+					// int numeroAlCuadrado = numero * numero;
+					numero *= numero;
+					// System.out.println("El numero es: " + numero);
+					System.out.println("El numero al cuadrado es: " + numero);
+
+				}
+
+			}
+
+		}
+		// Matriz resultante con los cuadrados de los numeros impares
+
+		System.out.println("La matriz resultante con los cuadrados: ");
+		for (int[] fila : matriz)
+			for (int valor : fila)
+				if (valor != 0)
+					System.out.println(valor);
 	}
-
 }
